@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_01_150656) do
+ActiveRecord::Schema.define(version: 2018_12_01_190322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "furniture_items", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name", null: false
+    t.string "type", null: false
+    t.text "description", null: false
+    t.json "images", null: false
+    t.float "length", null: false
+    t.float "width", null: false
+    t.float "price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_furniture_items_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
