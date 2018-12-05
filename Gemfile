@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
-
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'devise'
 gem 'simple_token_authentication', '~> 1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
