@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_12_05_154458) do
   create_table "furniture_items", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name", null: false
-    t.string "type", null: false
+    t.string "kind", null: false
     t.text "description", null: false
     t.json "images", null: false
     t.float "length", null: false

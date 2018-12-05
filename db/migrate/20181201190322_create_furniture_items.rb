@@ -3,7 +3,7 @@ class CreateFurnitureItems < ActiveRecord::Migration[5.2]
     create_table :furniture_items do |t|
     	t.belongs_to :user, index: true
     	t.string :name, null:false 
-        t.string :type, null:false
+        t.string :kind, null:false
         t.text :description, null:false
         t.json :images, null:false
         t.float :length, null:false
