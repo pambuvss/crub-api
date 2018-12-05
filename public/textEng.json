@@ -1,0 +1,68 @@
+{
+  "welcomeMobileMenuCompanyName": "Create and Build",
+  "welcomeDesktopMenuCompanyName": "CRAB",
+  "welcomeHeaderMainTitle": "Create And Build",
+  "welcomeHeaderSubTitle": "Create and equip a room correctly.",
+  "welcomeHeaderButton": "CREATE PROJECT",
+  "welcomeBuyerAttractionGoodServiceHeader": "We will help you choose furniture",
+  "welcomeBuyerAttractionGoodServiceDescription": "We provide a convenient service for creating room with the best,\n\t\t\tmost beautiful and most importantly - your chosen furniture.",
+  "welcomeBuyerAttractionBigBaseHeader": "With us you will find exactly what you want",
+  "welcomeBuyerAttractionBigBaseDescription": "Yes it's true! We are a constantly expanding marketplace. Our user\n\t\t\twill always find the goods to their liking!",
+  "welcomeBuyerAttractionButton": "Try",
+  "welcomeBuyerReviewLeftHeader": "\"Excellent idea!\"",
+  "welcomeBuyerReviewLeftDescription": "This is what clients say about us.!",
+  "welcomeBuyerReviewRightHeader": "\"It took me one hour to furnish my rooms with the furniture I needed. 5 minutes after placing the order I was contacted and agreed on the delivery.\"",
+  "welcomeBuyerReviewRightDescription": "Ivanov Ivan, the happy owner of furniture",
+  "welcomeSellerAttractionHeader": "We also offer an excellent opportunity for sellers to sell their goods.",
+  "welcomeSellerAttractionDescription": "If you have furniture and you want to sell it - we will help you. CRAB - an aggregator that sells your products for you! Just upload your products, we take care of the rest!",
+  "welcomeSellerAttractionButton": "Upload",
+  "welcomeSellerReviewLeftHeader": "\"I was surprised when the flow of customers doubled! The sale of goods has improved thanks to this site!\"\n\t\t\t",
+  "welcomeSellerReviewLeftDescription": "Petrov Petr, Furniture Store Representative \"Divanich\"",
+  "welcomeSellerReviewRightHeader": "\"A good place to sell your products!\"",
+  "welcomeSellerReviewRightDescription": "We are proud of it!",
+  "welcomeFooterLeftHeader": "Home",
+  "welcomeFooterRightHeader": "Contact us",
+  "welcomeFooterLeftSideItems": [
+    {
+      "text": "Create project"
+    },
+    {
+      "text": "Configurate room"
+    },
+    {
+      "text": "Sell furniture"
+    }
+  ],
+  "welcomeFooterRightSideItems": [
+    {
+      "text": "+123-456-789"
+    },
+    {
+      "text": "+987-654-321"
+    },
+    {
+      "text": "qwerty@mail.ru"
+    },
+    {
+      "text": "ytrewq@mail.ru"
+    }
+  ],
+  "welcomeMenuNavigationItems": [
+    {
+      "text": "Home"
+    }
+  ],
+  "welcomeMenuAccountItems": [
+    {
+      "text": "Sign in"
+    },
+    {
+      "text": "Sign up"
+    }
+  ],
+  "menuAccountItems": {
+    "enter": "Sign in",
+    "reg": "Sign up",
+    "logout": "Sign out"
+  }
+}

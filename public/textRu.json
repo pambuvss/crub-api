@@ -1,0 +1,68 @@
+{
+  "welcomeMobileMenuCompanyName": "Create and Build",
+  "welcomeDesktopMenuCompanyName": "CRAB",
+  "welcomeHeaderMainTitle": "Create And Build",
+  "welcomeHeaderSubTitle": "Создавай и обустраивай комнату правильно.",
+  "welcomeHeaderButton": "СОЗДАТЬ ПРОЕКТ",
+  "welcomeBuyerAttractionGoodServiceHeader": "Мы поможем вам выбрать мебель",
+  "welcomeBuyerAttractionGoodServiceDescription": "Мы предоставляем удобный сервис для создания комнаты с самой лучшей,\n\t\t\tсамой красивой и главное - выбранной вами мебелью.",
+  "welcomeBuyerAttractionBigBaseHeader": "У нас вы точно найдете, что хотите",
+  "welcomeBuyerAttractionBigBaseDescription": "Да, это правда! Мы - постоянно пополняющая свою базу торговая площадка. Наш пользователь\n\t\t\tвсегда найдет товар себе по душе!",
+  "welcomeBuyerAttractionButton": "Попробовать",
+  "welcomeBuyerReviewLeftHeader": "\"Отличная идея!\"",
+  "welcomeBuyerReviewLeftDescription": "Это то, что говорят о нас!",
+  "welcomeBuyerReviewRightHeader": "\"Мне понадобился один час, чтобы обставить свои комнаты нужной мне мебелью. Через 5 минут после оформления заказа со мной связались и договорились о доставке.\"",
+  "welcomeBuyerReviewRightDescription": "Иванов Иван, Счастливый обладатель мебели",
+  "welcomeSellerAttractionHeader": "Мы также предлогаем отличную возможность продавцам реализовать свои товары",
+  "welcomeSellerAttractionDescription": "Если у вас есть мебель и вы хотите ее продать - мы поможем вам. CRAB - агрегатор, продающий ваши товары за вас! Просто загрузите свою продукцию, остальное мы берем на себя!",
+  "welcomeSellerAttractionButton": "Загрузить",
+  "welcomeSellerReviewLeftHeader": "\"Я был удивлен, когда поток клиентов увеличился в два раза! Продажа товаров улучшилась благодаря данной площадке!\"\n\t\t\t",
+  "welcomeSellerReviewLeftDescription": "Петров Петр, Представитель мебельного магазина \"Диваныч\"",
+  "welcomeSellerReviewRightHeader": "\"Хорошое место для реализации своей продукции!\"",
+  "welcomeSellerReviewRightDescription": "Мы этим гордимся!",
+  "welcomeFooterLeftHeader": "Главная",
+  "welcomeFooterRightHeader": "Cвяжитесь с нами",
+  "welcomeFooterLeftSideItems": [
+    {
+      "text": "Создать проект"
+    },
+    {
+      "text": "Сконфигурировать комнату"
+    },
+    {
+      "text": "Продать мебель"
+    }
+  ],
+  "welcomeFooterRightSideItems": [
+    {
+      "text": "+123-456-789"
+    },
+    {
+      "text": "+987-654-321"
+    },
+    {
+      "text": "qwerty@mail.ru"
+    },
+    {
+      "text": "ytrewq@mail.ru"
+    }
+  ],
+  "welcomeMenuNavigationItems": [
+    {
+      "text": "Главная"
+    }
+  ],
+  "welcomeMenuAccountItems": [
+    {
+      "text": "Войти"
+    },
+    {
+      "text": "Регистрация"
+    }
+  ],
+  "menuAccountItems": {
+    "enter": "Войти",
+    "reg": "Регистрация",
+    "logout": "Выйти"
+  }
+}
