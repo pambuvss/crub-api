@@ -7,14 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(email: "admin@crab.com",
-             password:              "123456789",
-             password_confirmation: "123456789",
+             password:              "admin@crab.com",
+             password_confirmation: "admin@crab.com",
              role:     2)
-
-10.times do |n|
-	User.create!(email: "shop" + n.to_s + "@crab.com",
-	             password:              "password",
-	             password_confirmation: "password",
-	             role:     1,
-	             shop: Faker::Company.name)
-end
