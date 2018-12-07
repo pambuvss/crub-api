@@ -6,11 +6,12 @@ class OrdersController < ApplicationController
 		@activeUser = User.find_by authentication_token: params[:token]
 
 		if @activeUser&.customer?
-			@orders = Order.all.where user_id: @activeUser.id
+			@orders = Order.all.joins(:furniture_item).where(user_id: 
+				@activeUser.id).select("orders.*, furniture_items.*");
 			render json: @orders, status: :ok
 		elsif @activeUser&.seller?
 			@orders = Order.joins(:furniture_item).where('furniture_items.
-				user_id ='+ @activeUser.id.to_s);
+				user_id ='+ @activeUser.id.to_s).select("orders.*, furniture_items.*");
 			render json: @orders, status: :ok
 		else
 			render json: {}, status: :unauthorized
