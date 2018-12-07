@@ -7,11 +7,11 @@ class OrdersController < ApplicationController
 
 		if @activeUser&.customer?
 			@orders = Order.all.joins(:furniture_item).where(user_id: 
-				@activeUser.id).select("orders.*, furniture_items.*");
+				@activeUser.id).select("orders.*, furniture_items.name,furniture_items.price");
 			render json: @orders, status: :ok
 		elsif @activeUser&.seller?
 			@orders = Order.joins(:furniture_item).where('furniture_items.
-				user_id ='+ @activeUser.id.to_s).select("orders.*, furniture_items.*");
+				user_id ='+ @activeUser.id.to_s).select("orders.*, furniture_items.name,furniture_items.price");
 			render json: @orders, status: :ok
 		else
 			render json: {}, status: :unauthorized
