@@ -16,7 +16,7 @@ class FurnitureItem < ApplicationRecord
       price: price,
       image_photos: images.map do |x|
         {
-          url: x.photo.url.absolute_url,
+          url: x.photo.url,
           name: x.photo_file_name,
           id: x.id
         }
