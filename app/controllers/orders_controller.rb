@@ -1,7 +1,5 @@
 class OrdersController < ApplicationController
 
-	before_action :cors_set_access_control_headers
-
 	def index
 		@activeUser = User.find_by authentication_token: params[:token]
 
@@ -49,13 +47,5 @@ class OrdersController < ApplicationController
       render json: {}, status: :unauthorized
     end
   end
-
-private
-		def cors_set_access_control_headers
-			headers['Access-Control-Allow-Origin'] = '*'
-			headers['Access-Control-Allow-Methods'] = '*'
-			headers['Access-Control-Request-Method'] = '*'
-			headers['Access-Control-Allow-Headers'] = '*'
-	  	end
 
 end
