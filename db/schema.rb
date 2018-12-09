@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_204103) do
+ActiveRecord::Schema.define(version: 2018_12_09_141842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,13 +20,22 @@ ActiveRecord::Schema.define(version: 2018_12_05_204103) do
     t.string "name", null: false
     t.string "kind", null: false
     t.text "description", null: false
-    t.json "images", null: false
     t.float "length", null: false
     t.float "width", null: false
     t.float "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_furniture_items_on_user_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.integer "furniture_item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "orders", force: :cascade do |t|
