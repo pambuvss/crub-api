@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :furniture_items
   devise_for :users, only: []
   resources :furniture_items, only: [:index, :show, :create, :destroy]
   resources :content, only: [:index]

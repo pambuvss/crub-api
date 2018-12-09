@@ -10,15 +10,19 @@ class FurnitureItemsController < ApplicationController
 		@activeUser = User.find_by authentication_token: params[:token]
 
 		if @activeUser&.seller?
-			@furniture_item = FurnitureItem.new(params[:furniture_item])
-			render json: params[:furniture_item], status: :created
-#			if @furniture_item.save
-#				render json: {}, status: :created
-#			else 
-#				render json: {}, status: :ok
-#			end
-#		else
-#			render json: {}, status: :unauthorized
+			
+			@furniture_item = FurnitureItem.new(furniture_item_params)
+			@furniture_item.user_id = @activeUser.id
+
+
+			if @furniture_item.save
+				render json: {}, status: :created
+			else 
+				render json: {}, status: :ok
+			end
+
+		else
+			render json: {}, status: :unauthorized
 		end
 	end
 
@@ -44,19 +48,18 @@ class FurnitureItemsController < ApplicationController
 
 	def furniture_item_params
     	params.require(:furniture_item).permit([
-      		:user_id,
       		:name,
-	        :description,
       		:kind,
+	        :description,
 	        :length,
 	        :width,
 	        :price,
 	        images_attributes: %I[
-	          id
-	          photo
-	          _destroy
-	        ]
-	      ]
+	           id
+	           photo
+	           _destroy
+	         ]
+	       ]
 	    )
   	end	
 
