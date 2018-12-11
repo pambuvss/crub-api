@@ -17,6 +17,7 @@ class FurnitureItem < ApplicationRecord
       image_photos: images.map do |x|
         {
           url: x.photo.url,
+          urlThumb: x.photo.url(:thumb),
           name: x.photo_file_name,
           id: x.id
         }
