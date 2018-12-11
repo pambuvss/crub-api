@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
+
+gem "figaro"
+gem 'aws-sdk', '~> 2.3'
 gem 'paperclip', '~> 5.1.0'
 gem 'rack-cors', require: 'rack/cors'
 gem 'json'
