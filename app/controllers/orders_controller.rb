@@ -23,12 +23,29 @@ class OrdersController < ApplicationController
 
 			@orderJSON = JSON.parse params[:order]
 			
+			@array_shops = Array.new
+
 			@orderJSON["furniture_items"].each do |item|
-  				@order = Order.new(user_id: @@activeUser.id, 
-  					furniture_item_id: item["id"], count: item["count"])
-  				@order.save
+				@array_shops.push(FurnitureItem.find(item["id"]).shop_id)
 			end	
 
+			@array_shops = @array_shops.uniq			
+
+			puts @array_shops.size
+
+			@array_shops.each do |shop_id|
+				@order = Order.new(shop_id: shop_id, user_id: @@activeUser.id)
+				@order.save
+					@orderJSON["furniture_items"].each do |item|
+						 if FurnitureItem.find(item["id"]).shop_id == shop_id
+							@fil = FurnitureItemsList.new 
+							@fil.order_id = @order.id
+							@fil.count = item["count"]
+							@fil.furniture_item_id = item["id"]
+							@fil.save
+						 end
+					end	
+			end
 			render json: {}, status: :created
 		else
 			render json: {}, status: :unauthorized

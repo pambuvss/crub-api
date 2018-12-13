@@ -1,6 +1,6 @@
 class FurnitureItem < ApplicationRecord
-	belongs_to :user
-	has_many :order
+	belongs_to :shop
+	has_many :furniture_items_list
 	
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true  

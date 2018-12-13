@@ -1,9 +1,15 @@
 class FurnitureItemsController < ApplicationController
 	
-	def index 
-		@furniture_items = FurnitureItem.all
+	def index
+		@activeUser = User.find_by authentication_token: params[:token]
 
-		render json: @furniture_items, status: :ok
+		if @activeUser&.seller?
+			@furniture_items = FurnitureItem.where shop_id: @activeUser.shop.id
+			render json: @furniture_items, status: :ok
+		else
+			@furniture_items = FurnitureItem.all
+			render json: @furniture_items, status: :ok
+		end
 	end
 
 	def create
@@ -12,7 +18,7 @@ class FurnitureItemsController < ApplicationController
 		if @activeUser&.seller?
 			
 			@furniture_item = FurnitureItem.new(furniture_item_params)
-			@furniture_item.user_id = @activeUser.id
+			@furniture_item.shop_id = @activeUser.shop_id
 
 
 			if @furniture_item.save
@@ -35,7 +41,7 @@ class FurnitureItemsController < ApplicationController
 		@activeUser = User.find_by authentication_token: params[:token]
 		@destroyFurnitureItem = FurnitureItem.find(params[:id])
 
-		if @activeUser&.seller? && @destroyFurnitureItem&.user_id == @activeUser.id
+		if @activeUser&.seller? && @destroyFurnitureItem&.shop_id == @activeUser.shop_id
 			if @destroyFurnitureItem.destroy
 				render json: {}, status: :ok
 			end

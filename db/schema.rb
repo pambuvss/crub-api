@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_09_220750) do
+ActiveRecord::Schema.define(version: 2018_12_13_160703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "furniture_items", force: :cascade do |t|
-    t.bigint "user_id"
     t.string "name", null: false
     t.string "kind", null: false
     t.text "description", null: false
@@ -25,7 +24,16 @@ ActiveRecord::Schema.define(version: 2018_12_09_220750) do
     t.float "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_furniture_items_on_user_id"
+    t.bigint "shop_id"
+    t.index ["shop_id"], name: "index_furniture_items_on_shop_id"
+  end
+
+  create_table "furniture_items_lists", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "furniture_item_id"
+    t.integer "count", null: false
+    t.index ["furniture_item_id"], name: "index_furniture_items_lists_on_furniture_item_id"
+    t.index ["order_id"], name: "index_furniture_items_lists_on_order_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -40,11 +48,14 @@ ActiveRecord::Schema.define(version: 2018_12_09_220750) do
 
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "furniture_item_id"
-    t.integer "count", null: false
     t.integer "status", default: 0, null: false
-    t.index ["furniture_item_id"], name: "index_orders_on_furniture_item_id"
+    t.bigint "shop_id"
+    t.index ["shop_id"], name: "index_orders_on_shop_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "shops", force: :cascade do |t|
+    t.string "name", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,10 +68,14 @@ ActiveRecord::Schema.define(version: 2018_12_09_220750) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "authentication_token", limit: 30
-    t.string "shop", default: "", null: false
+    t.bigint "shop_id"
     t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["shop_id"], name: "index_users_on_shop_id"
   end
 
+  add_foreign_key "furniture_items", "shops"
+  add_foreign_key "orders", "shops"
+  add_foreign_key "users", "shops"
 end
