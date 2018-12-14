@@ -16,6 +16,7 @@ def as_json(_opts = {})
       id: id,
       customer: user.email,
       shop: shop.name,
+      status: status,
       furniture_items: furniture_items_list.map do |x|
         {
           name: x.furniture_item.name,

@@ -29,7 +29,6 @@ class OrdersController < ApplicationController
 
 			@array_shops = @array_shops.uniq			
 
-			puts @array_shops.size
 
 			@array_shops.each do |shop_id|
 				@order = Order.new(shop_id: shop_id, user_id: @@activeUser.id)
