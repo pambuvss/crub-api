@@ -2,7 +2,7 @@ class Image < ApplicationRecord
   belongs_to :furniture_item, inverse_of: :images
   has_attached_file \
     :photo,
-    styles: { thumb: ['32x32#', 'jpg'] },
+    styles: { thumb: ['100x100#', 'jpg'] },
     convert_options: {
       all: '-interlace Plane'
     },
