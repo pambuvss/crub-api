@@ -21,7 +21,15 @@ def as_json(_opts = {})
         {
           name: x.furniture_item.name,
           price: x.furniture_item.price,
-          count: x.count
+          count: x.count,
+          image_photos: x.furniture_item.images.map do |p|
+            {
+              url: p.photo.url,
+              urlThumb: p.photo.url(:thumb),
+              name: p.photo_file_name,
+              id: p.id
+            }
+          end
         }
       end
     }
