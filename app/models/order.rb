@@ -11,12 +11,21 @@ class Order < ApplicationRecord
 		self.status ||= :during
 	end
 
+  def get_order_price
+    @price = 0
+    furniture_items_list.map do |x|
+      @price+=x.furniture_item.price * x.count
+    end
+    @price
+  end
+
 def as_json(_opts = {})
     {
       id: id,
       customer: user.email,
       shop: shop.name,
       status: status,
+      price: get_order_price,
       furniture_items: furniture_items_list.map do |x|
         {
           name: x.furniture_item.name,
