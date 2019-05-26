@@ -6,7 +6,7 @@ ruby '2.4.1'
 
 gem "figaro"
 gem 'aws-sdk', '~> 2.3'
-gem 'paperclip', '~> 5.1.0'
+gem "paperclip", "~> 6.0.0"
 gem 'rack-cors', require: 'rack/cors'
 gem 'json'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
@@ -24,6 +24,8 @@ gem 'puma', '~> 3.11'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'pry-byebug'
+gem "rubycritic", require: false
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -40,6 +42,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.8'
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 group :development do

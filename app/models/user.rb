@@ -22,7 +22,7 @@ class User < ApplicationRecord
       email: email,
       role: role,
       authentication_token: authentication_token,
-      shop: shop.name 
+      shop: shop&.name 
     }
     else
     {

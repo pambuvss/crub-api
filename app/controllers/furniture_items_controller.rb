@@ -20,7 +20,6 @@ class FurnitureItemsController < ApplicationController
 			@furniture_item = FurnitureItem.new(furniture_item_params)
 			@furniture_item.shop_id = @activeUser.shop_id
 
-
 			if @furniture_item.save
 				render json: {}, status: :created
 			else 
